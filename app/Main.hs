@@ -1,4 +1,5 @@
 {-# LANGUAGE InstanceSigs #-}
+{-# LANGUAGE BangPatterns #-}
 
 module Main where
 
@@ -30,9 +31,8 @@ import Control.Monad (foldM)
 -- >>> myLength ""           -- 0
 myLength :: [a] -> Int
 myLength xs = myLengthHelper xs 0
-    where myLengthHelper :: [a] -> Int -> Int
-          myLengthHelper [] acc = acc
-          myLengthHelper (_ : xz) acc = myLengthHelper xz (acc + 1)
+    where myLengthHelper [] !acc = acc
+          myLengthHelper (_ : xz) !acc = myLengthHelper xz (acc + 1)
 
 -- 1.2. Реверс списка.
 -- >>> myReverse [1,2,3]     -- [3,2,1]
