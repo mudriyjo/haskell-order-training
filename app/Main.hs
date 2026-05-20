@@ -29,7 +29,10 @@ import Control.Monad (foldM)
 -- >>> myLength [1,2,3,4]    -- 4
 -- >>> myLength ""           -- 0
 myLength :: [a] -> Int
-myLength _ = undefined
+myLength a = myLengthHelper a 0
+    where myLengthHelper :: [a] -> Int -> Int
+          myLengthHelper [] acc = acc
+          myLengthHelper (_ : xs) acc = myLengthHelper xs acc + 1
 
 -- 1.2. Реверс списка.
 -- >>> myReverse [1,2,3]     -- [3,2,1]
@@ -476,8 +479,8 @@ runChecks = do
     isSuccess _           = False
 
 -- Раскомментируй для запуска через `runhaskell HaskellExercises.hs`:
--- main :: IO ()
--- main = runChecks
-
 main :: IO ()
-main = putStrLn "Реализуй задачи и раскомментируй runChecks в main."
+main = runChecks
+
+-- main :: IO ()
+-- main = putStrLn "Реализуй задачи и раскомментируй runChecks в main."
