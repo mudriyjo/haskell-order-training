@@ -29,7 +29,7 @@ import Control.Monad (foldM)
 -- >>> myLength [1,2,3,4]    -- 4
 -- >>> myLength ""           -- 0
 myLength :: [a] -> Int
-myLength = undefined
+myLength _ = undefined
 
 -- 1.2. Реверс списка.
 -- >>> myReverse [1,2,3]     -- [3,2,1]
