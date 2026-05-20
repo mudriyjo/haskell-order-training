@@ -29,10 +29,10 @@ import Control.Monad (foldM)
 -- >>> myLength [1,2,3,4]    -- 4
 -- >>> myLength ""           -- 0
 myLength :: [a] -> Int
-myLength a = myLengthHelper a 0
+myLength xs = myLengthHelper xs 0
     where myLengthHelper :: [a] -> Int -> Int
           myLengthHelper [] acc = acc
-          myLengthHelper (_ : xs) acc = myLengthHelper xs acc + 1
+          myLengthHelper (_ : xz) acc = myLengthHelper xz (acc + 1)
 
 -- 1.2. Реверс списка.
 -- >>> myReverse [1,2,3]     -- [3,2,1]
