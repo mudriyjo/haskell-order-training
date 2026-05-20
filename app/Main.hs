@@ -427,9 +427,9 @@ runChecks = do
   check "3.4 fmap Pair"               (fmap (+10) (Pair 1 2) == Pair 11 12)
 
   putStrLn "\n=== Часть 4: Applicative ==="
-  check "4.1 (+) MyJust MyJust"       ((+) <$> MyJust 1 <*> MyJust 2 == MyJust 3)
+  check "4.1 (+) MyJust MyJust"       (((+) <$> MyJust 1 <*> MyJust 2) == MyJust 3)
   check "4.1 (+) MyJust MyNothing"
-    ((+) <$> MyJust 1 <*> (MyNothing :: MyMaybe Int) == MyNothing)
+    (((+) <$> MyJust 1 <*> (MyNothing :: MyMaybe Int)) == MyNothing)
   check "4.2 MyEither short-circuit"
     (((+) <$> (MyLeft "no" :: MyEither String Int) <*> MyLeft "also no") == MyLeft "no")
   check "4.4 Validation success"

@@ -1,1 +1,30 @@
-.DS_store
+# macOS
+.DS_Store
+
+# Haskell build artifacts
+dist/
+dist-newstyle/
+.stack-work/
+.ghc.environment.*
+*.hi
+*.o
+*.prof
+*.aux
+*.hp
+*.eventlog
+
+# Cabal
+cabal.project.local
+cabal.project.local~
+.cabal-sandbox/
+cabal.sandbox.config
+
+# HIE / HLS
+.hie/
+.hls/
+
+# Editors
+*.swp
+*.swo
+.vscode/
+.idea/
