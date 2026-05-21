@@ -38,7 +38,8 @@ myLength xs = myLengthHelper xs 0
 -- >>> myReverse [1,2,3]     -- [3,2,1]
 -- >>> myReverse "hello"     -- "olleh"
 myReverse :: [a] -> [a]
-myReverse = undefined
+myReverse (x:xs) = myReverse xs ++ [x]
+myReverse [] = []
 
 -- 1.3. Свой map.
 -- >>> myMap (*2) [1,2,3]    -- [2,4,6]
